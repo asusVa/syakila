@@ -9,6 +9,7 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    overflow-x: hidden;
   }
   
   .container {
@@ -48,18 +49,22 @@
     background: #ddd;
   }
   
-  /* Sections */
+  /* Sections with Row Block Background */
   section {
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
+    text-align: center;
   }
   
-  .about, .contact {
+  .about {
     background: #f4f4f4;
-    text-align: center;
   }
   
   .portfolio {
-    text-align: center;
+    background: #e4e4e4;
+  }
+  
+  .contact {
+    background: #f4f4f4;
   }
   
   .portfolio-grid {
@@ -69,9 +74,75 @@
   }
   
   .portfolio-item {
-    background: #e4e4e4;
+    background: #fff;
     padding: 2rem;
     border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .portfolio-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slidein {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  @keyframes zoom {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .animate-fadein {
+    animation: fadein 1.5s ease-in-out;
+  }
+  
+  .animate-slidein {
+    animation: slidein 1s ease-in-out;
+  }
+  
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+  
+  .animate-zoom {
+    animation: zoom 1s ease-in-out;
   }
   
   /* Footer */
